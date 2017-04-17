@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--*********************************************************************
+ * @author	Kingsley U. Uwode II, contractor via Robert Half Technologies
+ * @since	May 28 2015
+ * @link	mailto:kingzmeadow@hotmail.com
+ *
+ * step_01
+ * Welcome Screen (*.html view companion file)
+ *-->
+
+<step id="01">
+    <page_title>
+        <english><![CDATA[Welcome to Event Check-In!]]></english>
+        <french><![CDATA[Bienvenue à Event Check-In!]]></french>
+    </page_title>
+    <text>
+        <english><![CDATA[Welcome to Event Check-In!]]></english>
+        <french><![CDATA[Bienvenue à Event Check-In!]]></french>
+    </text>
+    <text>
+        <english><![CDATA[This automated check-in process is designed to save you time and make Event Check-In easier than ever!  Here is what you'll need to do:]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Review your online profile.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Enter emergency contact information.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Your event materials will be mailed to you if you complete Event Check-In by June 12. After this time, your event materials will be available to pick up on-site the morning of Saturday, June 24.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[We are only able to mail check-in packets to Canadian addresses.  If you live outside Canada, your packet will be available for easy pick-up on Saturday morning.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Due to team fundraising, those Walkers who have not met their individual fundraising minimum by Saturday morning will have their eligibility to Walk calculated based on their team’s fundraising totals. If your team has not raised sufficient funds to get you to $1,500, you will be required to turn in additional donations or complete a Delayed Self-Pledge in order to Walk.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+    </text>
+</step>

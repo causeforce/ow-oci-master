@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--*********************************************************************
+ * @author	Kingsley U. Uwode II, contractor via Robert Half Technologies
+ * @since	May 28 2015
+ * @link	mailto:kingzmeadow@hotmail.com
+ *
+ * step_03:
+ * Emergency Contact Info (*.html view companion file)
+ *-->
+
+<step id="03">
+    <page_title>
+        <english><![CDATA[Important Information]]></english>
+    </page_title>
+    <text>
+        <english><![CDATA[Important Information]]></english>
+        <french><![CDATA[Une information important]]></french>
+    </text>
+    <text>
+        <english><![CDATA[Emergency Contact Name]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Emergency Contact Phone]]></english>
+    </text>
+    <text>
+        <english><![CDATA[OneWalk uses a special lanyard to honour cancer survivors. If you are a cancer survivor or are battling cancer at this time and would like to be recognized, please check this box.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[ ]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Are you a cancer survivor?]]></english>
+    </text>
+    <text>
+        <english><![CDATA[If you require a vegetarian meal, please check this box. Gluten-free options will be available at every meal/snack area.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[ ]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Do you require a vegetarian meal?]]></english>
+    </text>
+</step>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--*********************************************************************
+ * @author	Kingsley U. Uwode II, contractor via Robert Half Technologies
+ * @since	May 28 2015
+ * @link	mailto:kingzmeadow@hotmail.com
+ *
+ * step_06:
+ * Safety Video (*.html view companion file)
+ *-->
+
+<step id="06">
+    <page_title>
+        <english><![CDATA[Safety Quiz]]></english>
+    </page_title>
+    <text>
+        <english><![CDATA[Safety Video]]></english>
+        <french><![CDATA[Vidéo sécurité]]></french>
+    </text>
+    <text>
+        <english><![CDATA[Before completing Event Check-In, you are required to watch this video that outlines safety precautions and important event information you should be aware of while participating in the event.]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Play]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Pause]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Resume]]></english>
+    </text>
+    <text>
+        <english><![CDATA[Replay]]></english>
+    </text>
+</step>

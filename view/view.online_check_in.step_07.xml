@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--*********************************************************************
+ * @author	Kingsley U. Uwode II, contractor via Robert Half Technologies
+ * @since	May 28 2015
+ * @link	mailto:kingzmeadow@hotmail.com
+ *
+ * step_07:
+ * Upsell (*.html view companion file)
+ *-->
+ 
+<step id="07">
+    <page_title>
+        <english><![CDATA[Register Now for the 2018 OneWalk to Conquer Cancer for $10!]]></english>
+		<french><![CDATA[Inscrivez-vous !]]></french>
+    </page_title>
+    <text>
+        <english><![CDATA[Register Now for the 2018 OneWalk to Conquer Cancer for $10!]]></english>
+		<french><![CDATA[Inscrivez-vous !]]></french>
+    </text>
+    <text>
+        <english><![CDATA[When you register now, you will receive a limited edition OneWalk t-shirt available for pick up on event day!]]></english>
+		<french><![CDATA[Si vous choisissez de pré- inscrire maintenant et avez rencontré votre collecte de fonds minimale , le lien de paiement apparaîtra après avoir choisi «OUI» et en cliquant sur le bouton «Suivant».]]></french>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+		<french><![CDATA[]]></french>
+    </text>
+    <text>
+        <english><![CDATA[If you have not met your fundraising minimum, the $10 payment will be included in either your Instant or Delayed Self-Pledge.  In either case, the $10 payment will be charged to your credit card today.]]></english>
+		<french><![CDATA[Si vous n'êtes pas satisfait de votre collecte de fonds minimum , le paiement de ? $ sera inclus soit dans votre instantanée ou différée d'auto- engagement . Dans les deux cas , le paiement de 25 $ sera débité de votre carte de crédit aujourd'hui.]]></french>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+		<french><![CDATA[]]></french>
+    </text>
+    <text>
+        <english><![CDATA[]]></english>
+		<french><![CDATA[]]></french>
+    </text>
+    <text>
+        <english><![CDATA[Yes, register for the 2018 event for $10.]]></english>
+		<french><![CDATA[Oui , inscrivez-vous pour l'événement 2018 pour ? $ et obtenez Inscription gratuite .]]></french>
+    </text>
+    <text>
+        <english><![CDATA[NO THANKS, I don't want to register at this time.]]></english>
+		<french><![CDATA[NON MERCI , je ne veux pas vous inscrire à ce moment .]]></french>
+    </text>
+</step>
