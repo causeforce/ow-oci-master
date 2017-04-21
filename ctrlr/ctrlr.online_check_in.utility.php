@@ -26,7 +26,8 @@ function ctrlr_online_check_in_pro_page(&$env,&$msgs,$page_upd_val=NULL){
     $page_scrubbed_val=function(&$env,$pv){
         return (($pv=(int)$pv)<$env['step']['min']?$env['step']['min']:($pv>$env['step']['max']?$env['step']['max']:$pv));
     };
-
+    $team_funds_excess = 0;
+    $total_funds_complete = 0;
     # Create the appropriate request for retrieving the current page or updating page value
     if($get_page=(is_int($page_upd_val)===FALSE)){
         $env['request'][]=array(
@@ -219,7 +220,7 @@ function ctrlr_online_check_in_pro_skip_tenting_assignment(&$env,&$msgs,$pt_txt=
 function ctrlr_online_check_in_pro_funds_check(&$env,&$msgs,&$reg=NULL,&$frr=NULL){
     
     
-    $testing_mode = false;
+    $testing_mode = true;
     if ($testing_mode) {
         // Added by Kevin only for testing
         echo '<script type="text/javascript">function toggle_visibility(id) {';
@@ -382,19 +383,26 @@ function ctrlr_online_check_in_pro_funds_check(&$env,&$msgs,&$reg=NULL,&$frr=NUL
                         $funds_check['is_user_metrics']=false;
 
                         // Golden calculations
-
+						
                         // old   $team_funds_required = $total_team_numbers*$funds_check['oci_cost'];
                         // + 1 *$funds_check['oci_cost']: We would need to account for the person who is checking in at the time of the check.
                         // edit by Scott $team_funds_required = $total_complete_team_numbers*$total_complete_team_raised+$total_team_gift + 1 *$funds_check['oci_cost'];
-                        $team_funds_required = ($total_complete_team_numbers /* *$total_complete_team_raised+$total_team_gift */ + 1) * ($funds_check['oci_cost']);
-
+						// IF NEGATIVE EXTRA CASH
+						$team_funds_required = (($total_complete_team_numbers + 1) * ($funds_check['oci_cost']));
+                        $total_funds_used = ($total_complete_team_numbers * $funds_check['oci_cost'] - $total_complete_team_raised);
+                        $team_funds_excess = ($total_team_gift - $total_funds_used);
+						if($team_funds_excess <= 0) {
+							$team_funds_excess = 0;
+						}
                         $tmp = $team_funds_required - $total_participants_raised_amount;
-                        $team_funds_needed = ($tmp>0)? $tmp : 0 ;
+                        $team_funds_needed = ($tmp>0)? $tmp : 0;
 
                         $funds_check['team_funds_needed'] = $team_funds_needed;
 
                         //  4) Store logic evaluation above as an easily interpreted BOOLEAN value in variable "$funds_check['team_covering_oci']"
-                        $funds_check['team_covering_oci']=($total_participants_raised_amount >= $team_funds_required);
+                        
+                        
+                        $funds_check['team_covering_oci']=(($team_funds_excess + $funds_check['user_funds_raised']) >= $funds_check['user_funds_required']);
 
                         $funds_check['team_funds_required'] = $team_funds_required;
                     }
@@ -404,13 +412,26 @@ function ctrlr_online_check_in_pro_funds_check(&$env,&$msgs,&$reg=NULL,&$frr=NUL
     }
     if(is_bool(@$funds_check['is_user_metrics'])){
         //Luminate Online stores money values in cents, meaning, there is no decimal used, so, have to divide the amount raised by 100 to get its value in dollars.
-        $funds_check['result']['oci'] = ($funds_check['user_covering_oci'] || @$funds_check['team_covering_oci'] ? 'allow' : 'deny');
+// edit ST        $funds_check['result']['oci'] = ($funds_check['user_covering_oci'] || @$funds_check['team_covering_oci'] ? 'allow' : 'deny');
+        if($funds_check['user_covering_oci'] or $funds_check['team_covering_oci']) {
+            $funds_check['result']['oci'] = 'allow';
+	    } else {
+            $funds_check['result']['oci'] = 'deny';
+        }
+
     if ($testing_mode) {
         // Added by Kevin only for testing
-		echo 'user_covering_oci: '.($funds_check['result']['user_covering_oci']?'allow':'deny').'<br>';
-      echo 'team_covering_oci: '.($funds_check['result']['team_covering_oci']?'allow':'deny').'<br>';
+	  echo 'user_covering_oci: '.($funds_check['user_covering_oci']?'allow':'deny').'<br>';
+      echo 'team_covering_oci: '.($funds_check['team_covering_oci']?'allow':'deny').'<br>';
       echo 'Result of team and user oci: '.$funds_check['result']['oci'].'<br>';
+      echo 'individual raised: '.$funds_check['user_funds_raised'].'<br>';
 	  echo 'total_complete_team_numbers: '.($total_complete_team_numbers).'<br>';
+      echo 'excess funds: '.$team_funds_excess.'<br>';
+      echo 'total complete team raised: '.$total_complete_team_raised.'<br>';
+      echo 'total team gift: '.$total_team_gift.'<br>';
+      echo 'total team raised: '.$total_team_raised.'<br>';
+      echo 'total participant raised amount: '.$total_participants_raised_amount.'<br>';
+      echo 'total funds used: '.$total_funds_used.'<br>';
         // end of testing code
     }
         $funds_check['result']['check']=($funds_check['is_user_metrics']===TRUE ? 'individual' : 'team');
